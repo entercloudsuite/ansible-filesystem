@@ -32,7 +32,7 @@ Run with default vars:
 
     - hosts: all
       roles:
-        - { role: ansible-filesystem, filesystem_disk_name:vdb, filesystem_disk_mount:/example }
+        - { role: ansible-filesystem, filesystem_disk_name: vdb, filesystem_disk_mount: /example }
 
 ## Testing
 
