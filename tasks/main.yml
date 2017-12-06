@@ -1,0 +1,27 @@
+- name: Install requirements
+  package: name=xfsprogs
+
+- name: Check partitions
+  stat: path=/dev/{{ filesystem_disk_name }}1
+  register: partition
+
+- name: Create partitions label
+  command: parted -s /dev/{{ filesystem_disk_name }} mklabel gpt
+  when: "{{ partition.stat.exists }} == False"
+
+- name: Create partitions
+  command: parted --align optimal -s /dev/{{ filesystem_disk_name }} mkpart primary xfs 0% 100% 
+  when: "{{ partition.stat.exists }} == False"
+
+- name: Mkfs volumes
+  filesystem: fstype="{{ filesystem_name }} dev=/dev/{{ filesystem_disk_name }}1
+
+- name: Creating dirs for mount point
+  file: path={{ filesystem_disk_mount }} state=directory
+
+- name: Mount volumes
+  mount:
+    src: /dev/{{ filesystem_disk_name }}1
+    name: "{{ filesystem_disk_mount }}"
+    fstype: xfs
+    state: mounted

@@ -1,0 +1,6 @@
+---
+
+- name: run the main roles
+  hosts: all
+  roles:
+    - { role: ansible-filesytem }

@@ -1,0 +1,3 @@
+filesystem_name: xfs
+filesystem_disk_name: vdb
+filesystem_disk_mount: /example 
