@@ -11,7 +11,7 @@
   when: "{{ partition.stat.exists }} == False"
 
 - name: Create partitions
-  command: parted --align optimal -s /dev/{{ filesystem_disk_name }} mkpart primary xfs 0% 100% 
+  command: parted --align optimal -s /dev/{{ filesystem_disk_name }} mkpart primary xfs 0% 100%
   when: "{{ partition.stat.exists }} == False"
 
 - name: Mkfs volumes
