@@ -14,6 +14,10 @@ This role requires Ansible 2.2 or higher.
 
 The role defines most of its variables in `defaults/main.yml`:
 
+### `filesystem_name`
+- Name of the filesystem
+- Default value: **xfs**
+
 ### `filesystem_disk_name`
 - Name of the dev device
 - Default value: **vdb**
