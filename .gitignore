@@ -10,3 +10,5 @@ ansible-role-*
 *.pem
 *.pem.pub
 id_rsa
+.tox
+*.swp
