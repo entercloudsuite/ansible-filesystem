@@ -20,19 +20,23 @@ The role defines most of its variables in `defaults/main.yml`:
 
 ### `filesystem_disk_name`
 - Name of the dev device
-- Default value: **vdb**
+- Default value:
 
 ### `filesystem_disk_mount`
 - Path where the filesystem is located
-- Default value: **/example**
+- Default value:
 
 ## Filesystem Playbook
 
 Run with default vars:
 
-    - hosts: all
-      roles:
-        - { role: ansible-filesystem, filesystem_disk_name: vdb, filesystem_disk_mount: /example }
+```
+- hosts: all
+  roles:
+    - role: entercloudsuite.filesystem
+      filesystem_disk_name: vdb
+      filesystem_disk_mount: /example
+```
 
 ## Testing
 

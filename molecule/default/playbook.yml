@@ -3,4 +3,6 @@
 - name: run the main roles
   hosts: all
   roles:
-    - { role: ansible-filesystem }
+    - role: ansible-filesystem
+      filesystem_disk_name: vdb
+      filesystem_disk_mount: /example

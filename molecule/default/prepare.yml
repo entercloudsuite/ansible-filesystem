@@ -1,7 +1,9 @@
 ---
-
-- hosts: all
-  gather_facts: False
+- name: Prepare
+  hosts: all
+  gather_facts: false
   tasks:
-  - name: install ansible prerequisite (python)
-    raw: test -e /usr/bin/python || ( apt update -y && apt install python-minimal -y )
+    - name: Install python for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-zipstream)
+      become: true
+      changed_when: false

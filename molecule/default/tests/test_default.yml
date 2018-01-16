@@ -1,5 +1,13 @@
 ---
-
 file:
   /example:
     exists: true
+    filetype: directory
+
+mount:
+  /example:
+    exists: true
+    opts:
+      - rw
+    source: /dev/vdb1
+    filesystem: xfs

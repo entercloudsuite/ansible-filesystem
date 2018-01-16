@@ -8,11 +8,11 @@
 
 - name: Create partitions label
   command: parted -s /dev/{{ filesystem_disk_name }} mklabel gpt
-  when: "{{ partition.stat.exists }} == False"
+  when: partition.stat.exists == False
 
 - name: Create partitions
   command: parted --align optimal -s /dev/{{ filesystem_disk_name }} mkpart primary xfs 0% 100%
-  when: "{{ partition.stat.exists }} == False"
+  when: partition.stat.exists == False
 
 - name: Mkfs volumes
   filesystem: fstype="{{ filesystem_name }}" dev=/dev/{{ filesystem_disk_name }}1
