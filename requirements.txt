@@ -1,2 +1,1 @@
-shade
-molecule==2.6.0
+tox
