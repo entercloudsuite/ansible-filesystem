@@ -9,7 +9,7 @@
     molecule_instance_config: "{{ lookup('env', 'MOLECULE_INSTANCE_CONFIG') }}"
     molecule_yml: "{{ lookup('file', molecule_file) | molecule_from_yaml }}"
     keypair_name: molecule_key
-    keypair_path: "{{ lookup('env', 'MOLECULE_EPHEMERAL_DIRECTORY') }}/../../id_rsa"
+    keypair_path: "{{ lookup('env', 'MOLECULE_EPHEMERAL_DIRECTORY') }}/id_rsa"
   tasks:
     - name: Destroy molecule instance(s)
       os_server:

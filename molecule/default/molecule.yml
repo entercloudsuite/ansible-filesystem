@@ -14,14 +14,6 @@ provisioner:
   options:
     diff: True
     v: True
-  inventory:
-    group_vars:
-      all:
-        ansible_become: true
-        ansible_become_user: root
-        ansible_become_method: sudo
-        ansible_user: ubuntu
-        ansible_private_key_file: ../../id_rsa
   playbooks:
     create: create.yml
     prepare: prepare.yml
