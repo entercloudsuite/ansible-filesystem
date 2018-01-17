@@ -8,6 +8,8 @@
     molecule_file: "{{ lookup('env', 'MOLECULE_FILE') }}"
     molecule_instance_config: "{{ lookup('env', 'MOLECULE_INSTANCE_CONFIG') }}"
     molecule_yml: "{{ lookup('file', molecule_file) | molecule_from_yaml }}"
+    keypair_name: molecule_key
+    keypair_path: "{{ lookup('env', 'MOLECULE_EPHEMERAL_DIRECTORY') }}/../../id_rsa"
   tasks:
     - name: Destroy molecule instance(s)
       os_server:
@@ -31,6 +33,16 @@
         size: 1
         display_name: "{{ item.name }}"
       with_items: "{{ molecule_yml.platforms }}"
+
+    - name: Remove ssh key
+      file:
+        name: "{{ keypair_path }}"
+        state: absent
+
+    - name: Delete remote keypair
+      os_keypair:
+        name: "{{ keypair_name }}"
+        state: absent
 
     # Mandatory configuration for Molecule to function.
 
