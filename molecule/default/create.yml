@@ -79,14 +79,13 @@
       retries: 300
       with_items: "{{ server.results }}"
 
-    # Set up volume
-    - name: create volume
+    - name: Create volume
       os_volume:
         size: 1
         display_name: "{{ item.name }}"
       with_items: "{{ molecule_yml.platforms }}"
 
-    - name: attach volume to host
+    - name: Attach volume to host
       os_server_volume:
         server: "{{ item.name }}"
         volume: "{{ item.name }}"
