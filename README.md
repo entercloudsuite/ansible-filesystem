@@ -1,4 +1,4 @@
-Ansible Role: Fileystem
+Ansible Role: Filesystem
 ======================================
 
 [![Build Status](https://travis-ci.org/entercloudsuite/ansible-filesystem.svg?branch=master)](https://travis-ci.org/entercloudsuite/ansible-filesystem)
