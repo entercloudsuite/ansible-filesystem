@@ -35,11 +35,11 @@ Run with default vars:
   roles:
     - role: AerisCloud.disk
       disk_additional_disks:
-       - disk: /dev/vdb
-         fstype: xfs
-         mount_options: defaults
-         mount: /example
-         disable_periodic_fsck: false
+        - disk: /dev/vdb
+          fstype: xfs
+          mount_options: defaults
+          mount: /example
+          disable_periodic_fsck: false
 ```
 
 ## Testing
