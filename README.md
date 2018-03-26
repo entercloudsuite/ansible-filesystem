@@ -33,9 +33,13 @@ Run with default vars:
 ```
 - hosts: all
   roles:
-    - role: entercloudsuite.filesystem
-      filesystem_disk_name: vdb
-      filesystem_disk_mount: /example
+    - role: AerisCloud.disk
+      disk_additional_disks:
+       - disk: /dev/vdb
+         fstype: xfs
+         mount_options: defaults
+         mount: /example
+         disable_periodic_fsck: false
 ```
 
 ## Testing

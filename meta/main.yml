@@ -14,4 +14,5 @@ galaxy_info:
     - filesystem
     - cowsay
 
-dependencies: []
+dependencies:
+  - { role: AerisCloud.disk, version: v2.5.0 }
