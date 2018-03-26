@@ -12,19 +12,7 @@ This role requires Ansible 2.2 or higher.
 
 ## Role Variables
 
-The role defines most of its variables in `defaults/main.yml`:
-
-### `filesystem_name`
-- Name of the filesystem
-- Default value: **xfs**
-
-### `filesystem_disk_name`
-- Name of the dev device
-- Default value:
-
-### `filesystem_disk_mount`
-- Path where the filesystem is located
-- Default value:
+Refer to https://github.com/AerisCloud/ansible-disk
 
 ## Filesystem Playbook
 
