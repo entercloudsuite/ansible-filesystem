@@ -21,7 +21,7 @@ Run with default vars:
 ```
 - hosts: all
   roles:
-    - role: AerisCloud.disk
+    - role: entercloudsuite.filesystem
       disk_additional_disks:
         - disk: /dev/vdb
           fstype: xfs
