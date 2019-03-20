@@ -2,7 +2,7 @@ Ansible Role: Filesystem
 ======================================
 
 [![Build Status](https://travis-ci.org/entercloudsuite/ansible-filesystem.svg?branch=master)](https://travis-ci.org/entercloudsuite/ansible-filesystem)
-[![Galaxy](https://img.shields.io/badge/galaxy-entercloudsuite.filesystem-blue.svg?style=flat-square)](https://galaxy.ansible.com/entercloudsuite/filesystem)
+[![Galaxy](https://img.shields.io/badge/galaxy-lorenzocomotti.ansible_filesystem-blue.svg?style=flat-square)](https://galaxy.ansible.com/lorenzocomotti/ansible_filesystem)
 
 Creating partition, filesystem and mounting it
 
