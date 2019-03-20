@@ -15,4 +15,4 @@ galaxy_info:
     - cowsay
 
 dependencies:
-  - { role: AerisCloud.disk, version: v2.5.0 }
+  - { role: aeriscloud.disk, version: v2.5.0 }
